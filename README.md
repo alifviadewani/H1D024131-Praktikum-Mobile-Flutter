@@ -1,10 +1,11 @@
 # 📱 Laporan Praktikum Pemrograman Mobile - Flutter
 
 **Data Praktikan**
-- **Nama** : [Alifvia Putri Dewani]
-- **NIM** : [H1D024131]
-- **Shift KRS** : [Shift B]
-- **Shift Akhir** : [Shift E]
+- **Nama** : Alifvia Putri Dewani
+- **NIM** : H1D024131
+- **Shift KRS** : Shift B
+- **Shift Akhir** : Shift E
+
 ---
 
 ## 📄 Tugas Pertemuan 1: Bahasa Pemrograman Dart
@@ -44,3 +45,26 @@
 ![List Data Produk](docs/04_produk_page.jpeg)
 
 > **Kesimpulan Sesi 2:** Sesi kedua ini berhasil memberikan pemahaman praktis mengenai komponen widget dasar Flutter, interaksi form, perpindahan halaman, dan pembuatan layout daftar produk.
+
+---
+
+## 🔑 Tugas Pertemuan 3: Routes, Side Menu, Login & Local Storage
+**Tanggal Pelaksanaan:** Rabu, 04 November 2026
+
+### 📌 Ringkasan Kegiatan
+- **Aspek Non-Teknis:** Memahami alur autentikasi pengguna pada aplikasi seluler, manajemen status login, alur navigasi antarhalaman (*routing*), serta prinsip penyimpanan data lokal (*local storage*).
+- **Aspek Teknis:**
+  - Penggunaan package `shared_preferences` untuk menyimpan dan membaca data `username` secara persisten pada local storage[cite: 5, 6, 11].
+  - Pembuatan formulir `LoginPage` menggunakan `StatefulWidget` dengan validasi kredensial serta pembuatan dialog pop-up `AlertDialog` (`_showDialog`)[cite: 6, 7, 8].
+  - Integrasi komponen `Drawer` (`Sidemenu`) yang dapat diakses di beberapa halaman (`HomePage` dan `AboutPage`) menggunakan `ListTile` dan `Navigator.push`[cite: 11, 12, 13, 14].
+  - Menampilkan data profil pengguna secara dinamis di `HomePage` menggunakan fungsi `_loadUsername()` yang mengambil data dari local storage[cite: 11].
+
+### 📸 Tangkapan Layar Hasil Praktikum
+
+![Login Page](docs/05_login_page.jpeg)
+
+![Home Page](docs/06_home_page.jpeg)
+
+![Sidemenu](docs/07_sidemenu.jpeg)
+
+> **Kesimpulan Sesi 3:** Sesi ketiga ini berhasil mengimplementasikan sistem autentikasi sederhana berbasis `shared_preferences` dan navigasi antarhalaman menggunakan komponen `Drawer`.
