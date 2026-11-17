@@ -68,3 +68,32 @@
 ![Sidemenu](docs/07_sidemenu.jpeg)
 
 > **Kesimpulan Sesi 3:** Sesi ketiga ini berhasil mengimplementasikan sistem autentikasi sederhana berbasis `shared_preferences` dan navigasi antarhalaman menggunakan komponen `Drawer`.
+
+---
+
+## 🛒 Tugas Pertemuan 4: Integrasi REST API (CodeIgniter 4) & CRUD Produk
+**Tanggal Pelaksanaan:** Rabu, 11 November 2026
+
+### 📌 Ringkasan Kegiatan
+- **Aspek Non-Teknis:** Memahami arsitektur komunikasi *client-server* menggunakan REST API, pertukaran data berformat JSON, konfigurasi *Cross-Origin Resource Sharing* (CORS), serta alur autentikasi dan manajemen data dinamis berbasis database MySQL.
+- **Aspek Teknis:**
+  - Pembuatan *backend* REST API menggunakan **CodeIgniter 4** dengan database MySQL (`toko_api`) yang terdiri dari tabel `member`, `member_token`, dan `produk`.
+  - Implementasi *endpoint* autentikasi **Registrasi** (`POST /registrasi`) dengan enkripsi `password_hash` serta **Login** (`POST /login`) yang menghasilkan token sesi `auth_key`.
+  - Penggunaan package `http` dan fungsi `jsonDecode` pada Flutter untuk melakukan *HTTP request* (`GET`, `POST`, `PUT`, `DELETE`) ke *endpoint* server lokal (`toko-api`).
+  - Implementasi lengkap fitur **CRUD Produk** (*Create, Read, Update, Delete*) secara asinkronus (`FutureBuilder`, `async`/`await`) meliputi halaman `ProdukPage` (List Produk), `ProdukForm` (Tambah & Ubah Produk), dan `ProdukDetail` (Detail & Hapus Produk dengan konfirmasi `AlertDialog`).
+
+### 📸 Tangkapan Layar Hasil Praktikum
+
+![Registrasi Page](docs/08_registrasi_page.png)
+
+![Login API](docs/09_login_api.png)
+
+![List Produk](docs/10_list_produk.png)
+
+![Tambah Produk](docs/11_tambah_produk.png)
+
+![Ubah Produk](docs/12_ubah_produk.png)
+
+![Hapus Produk](docs/13_hapus_produk.png)
+
+> **Kesimpulan Sesi 4:** Sesi keempat ini berhasil mengintegrasikan aplikasi Flutter dengan backend REST API CodeIgniter 4 dan database MySQL sehingga seluruh proses autentikasi serta operasi CRUD data produk dapat berjalan secara dinamis dan persisten.
