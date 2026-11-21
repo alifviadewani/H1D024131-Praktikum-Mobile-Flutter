@@ -97,3 +97,31 @@
 ![Hapus Produk](docs/13_hapus_produk.png)
 
 > **Kesimpulan Sesi 4:** Sesi keempat ini berhasil mengintegrasikan aplikasi Flutter dengan backend REST API CodeIgniter 4 dan database MySQL sehingga seluruh proses autentikasi serta operasi CRUD data produk dapat berjalan secara dinamis dan persisten.
+
+---
+
+## Tugas Pertemuan 5 — Arsitektur BLoC, Session Management & Integrasi REST API
+
+Pada pertemuan ini, struktur aplikasi **Toko Kita** dimodularisasi menggunakan pola arsitektur **BLoC (Business Logic Component)** dengan pemisahan layer `model`, `helpers`, `bloc`, `widget`, dan `ui`, serta pengelolaan sesi login otomatis menggunakan `shared_preferences`.
+
+### Fitur & Komponen yang Diimplementasikan
+- **Model (`lib/model/`)**: Parsing respons JSON untuk `Registrasi`, `Login`, dan `Produk`.
+- **Helpers (`lib/helpers/`)**:
+  - `user_info.dart`: Menyimpan dan menghapus token autentikasi serta `userID` menggunakan `shared_preferences`.
+  - `api.dart`, `api_url.dart`, & `app_exception.dart`: Wrapper HTTP (`GET`, `POST`, `DELETE`) dengan header `Authorization: Bearer <token>` dan penanganan error status HTTP.
+- **BLoC (`lib/bloc/`)**: Pemisahan logika bisnis pada `RegistrasiBloc`, `LoginBloc`, `LogoutBloc`, dan `ProdukBloc` (CRUD produk).
+- **Custom Widget (`lib/widget/`)**: Dialog pop-up kustom `SuccessDialog` dan `WarningDialog`.
+- **Auto-Login (`lib/main.dart`)**: Pengecekan token otomatis saat aplikasi dibuka untuk mengarahkan pengguna langsung ke `ProdukPage` atau `LoginPage`.
+
+### Dokumentasi Output Aplikasi
+
+| 1. Registrasi Berhasil (`SuccessDialog`) | 2. Login Gagal (`WarningDialog`) |
+| :---: | :---: |
+| ![Registrasi Sukses](docs/14_registrasi_sukses.png) | ![Login Gagal](docs/15_login_gagal.png) |
+
+| 3. List Produk Awal (`ProdukPage`) | 4. List Produk dari REST API (`ProdukBloc`) |
+| :---: | :---: |
+| ![List Produk Awal](docs/16_list_produk_awal.png) | ![List Produk API](docs/17_list_produk_api.png) |
+
+### Kesimpulan
+Implementasi arsitektur BLoC pada aplikasi **Toko Kita** berhasil memisahkan lapisan logika bisnis (`bloc`), akses jaringan (`helpers`), model data (`model`), dan antarmuka pengguna (`ui` dan `widget`) sehingga struktur kode menjadi jauh lebih rapi dan mudah dikelola. Selain itu, penggunaan `shared_preferences` memungkinkan manajemen sesi otomatis menggunakan token autentikasi (auto-login dan logout), serta seluruh operasi CRUD produk berhasil terintegrasi secara dinamis dengan REST API CodeIgniter 4 disertai umpan balik dialog kustom (`SuccessDialog` dan `WarningDialog`).
